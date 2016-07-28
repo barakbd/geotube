@@ -40,20 +40,55 @@ a {
     display: inline-block;
     max-width: 300px;
 }
-form {
+#mainSearchForm {
     border: 2px solid green;
+    width: 60%;
+    display: inline-block;
+}
+#loginAndFavourites {
+    /*display:inline-block;*/
+    float: right;
+    width: 35%;
+    height: 300px;
+    padding: 20px;
+    border: 2px solid red;
+    margin: 20px;
+    vertical-align: top;
+    color: white;
+    box-sizing: border-box;
+}
+#loginAndFavourites table {
+    border: 1px solid green;
+    margin: 20px;
+    padding: 5px 10px;
+    width: 95%;
+}
+#loginAndFavourites th, #loginAndFavourites td {
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;;
+    white-space: nowrap;
+    max-width: 0px;
+    border: 1px solid red;
+    margin: 10px;
+}
+.search_name {
+    width: 30%;
+}
+.search_url {
     width: 60%;
 }
 table {
     border: none;
 }
-#mainTable {
+#resultsDiv {
     border: 2px solid blue;
     width: 60%;
 }
-#tableOfVideoContentResults {
-    background-color: yellow;
-    border: 2px solid red;
+#video-container {
+    max-height: 600px;
+    overflow: scroll;
+    border: 5px solid red;
 }
 #topSearchDisplay {
     color: white;
