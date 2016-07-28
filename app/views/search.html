@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="static/css/search.css">
     <script src="static/js/search.js"></script>
 </head>
@@ -196,33 +197,59 @@ Author:  Stephen Nicholls, March 10, 2014
     </div>
 
     <div id="loginAndFavourites">
-        <form action='/searches/add_favourite' method='POST' id='add_favourite'>
-        <!-- <form id='add_favourite'> -->
-            <label for='fav_name'>Favourite Name:</label>
-            <input type='text' name='fav_name' id='fav_name' placeholder='Name you search' />
-            <input type='submit' value='add' />
-        </form>
-
-        <table>
-            <tr>
-                <th class='search_name'>
-                    Search Name
-                </th>
-                <th class='search_url'>
-                    Search URL
-                </th>
-            </tr>
-            <tr>
-                <td class='search_name'>
-                    Test Name
-                </td>
-                <td class='search_url'>
-                    Test URLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLl
-                </td>
-            </tr>
-        </table>
+        <div id='addFavForm'>
+            <form action='/search/add_favourite' method='POST' id='add_favourite'>
+                <!-- <form id='add_favourite'> -->
+                <table>
+                    <tr>
+                        <td>
+                            <label for='fav_name'>Favourite Name:</label>
+                        </td>
+                        <td>
+                            <input type='text' name='fav_name' id='fav_name' placeholder='Name you search' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for='fav_description'>Add description:</label>
+                        </td>
+                        <td>
+                            <textarea name='fav_description' id='fav_description' placeholder='Add description' /></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type='submit' value='add' />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <!-- END ADD FAV FORM -->
+        </div>
+        <!-- END addFavForm -->
+        <div id='favTable'>
+            <table>
+                <tr>
+                    <th class='search_name'>
+                        Search Name
+                    </th>
+                    <th class='search_description'>
+                        Search Description
+                    </th>
+                </tr>
+                <tr>
+                    <td class='search_name'>
+                        Test Name
+                    </td>
+                    <td class='search_description'>
+                        Test URLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLl
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- END favTable -->
     </div>
-
+    <!-- END loginAndFavourites -->
     <div id="resultsDiv">
         <table>
             <tr>

@@ -57,13 +57,13 @@ a {
     color: white;
     box-sizing: border-box;
 }
-#loginAndFavourites table {
+#favTable table {
     border: 1px solid green;
     margin: 20px;
     padding: 5px 10px;
     width: 95%;
 }
-#loginAndFavourites th, #loginAndFavourites td {
+#favTable th, #favTable td {
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;;
@@ -75,7 +75,7 @@ a {
 .search_name {
     width: 30%;
 }
-.search_url {
+.search_description {
     width: 60%;
 }
 table {

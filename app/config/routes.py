@@ -28,7 +28,8 @@ routes['POST']['/post_review'] = 'Books#post_review'
 routes['POST']['/submit_book'] = 'Books#submit_book'
 routes['POST']['/testroute'] = 'Registrations#testroute'
 routes['GET']['/search'] = 'Searches#index'
-routes['POST']['/searches/add_favourite'] = 'Searches#add_favourite'
+routes['POST']['/search/add_favourite'] = 'Searches#add_favourite'
+routes['GET']['/search/get_favs_table_partial'] = 'Searches#favs_partial_html'
 """
     You can add routes and specify their handlers as follows:
 

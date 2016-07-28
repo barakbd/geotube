@@ -5,15 +5,19 @@ class Search(Model):
         super(Search, self).__init__()
 
     # Appended by_id due to method naming conflicts
-    def get_favourites_by_user_id(self, id):
-        query_all_fav = 'SELECT * FROM searches'
+    def get_favourites_by_user_id(self, session):
+        print 'Session is - ', session,'\n'
+        data_all_fav = {'id': session['id']}
+        query_all_fav = 'SELECT * FROM search_favs WHERE users_user_id = :id'
 
-        return self.db.query_db(query_all_fav)
+        return self.db.query_db(query_all_fav, data_all_fav)
 
     def add_favourite(self, form):
-        query_new_fav = 'INSERT INTO searches (search_name, search_url, created_at, updated_at) VALUES (:faveourite_name, :current_url_search, NOW(), NOW() )'
+        query_new_fav = 'INSERT INTO search_favs (fav_name, fav_description, search_url, created_at, updated_at, users_user_id) VALUES (:fav_name, :fav_description, :current_url_search, NOW(), NOW(), 2);'
+
         new_fav_data = {
-            'faveourite_name': form['faveourite_name'],
+            'fav_name': form['fav_name'],
+            'fav_description': form['fav_description'],
             'current_url_search': form['current_url_search'],
         }
         return self.db.query_db(query_new_fav, new_fav_data)

@@ -61,7 +61,8 @@ $(document).ready(function() {
     hideSearchFilters();
     resetResultsSection();
     displayCustomRangeSection();
-    new_fav_capture()
+    new_fav_capture();
+    get_favs_table_partial();
     $.getScript('https://apis.google.com/js/client.js?onload=handleClientLoad');
 });
 
@@ -1042,14 +1043,23 @@ function new_fav_capture() {
     $('#add_favourite').submit(function() {
         console.log('hi')
         var new_fav_data = {
-            'faveourite_name': document.getElementById('fav_name').value,
+            'fav_name': document.getElementById('fav_name').value,
+            'fav_description': document.getElementById('fav_description').value,
             'current_url_search': window.location.search
         }
         console.log(new_fav_data)
-        $.post('/searches/add_favourite', new_fav_data, function(new_fav){
-
+        $.post('/search/add_favourite', new_fav_data, function(response) {
+            get_favs_table_partial();
         });
         document.getElementById('fav_name').value='';
+        document.getElementById('fav_description').value='';
+
         return false;
     });
+}
+
+function get_favs_table_partial(){
+    $.get('/search/get_favs_table_partial'), function(res){
+        $('#favTable').html(res);
+    }
 }

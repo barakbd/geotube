@@ -15,15 +15,17 @@ class Searches(Controller):
     def index(self):
         # if 'id' in session:
         #     return redirect('/')
+        session['id'] = 2
         return self.load_view('search.html')
-
-    def all_fav(self):
-        all_fav=self.models['Search'].get_favourites_by_user_id()
-        return
 
     def add_favourite(self):
         print 'Searches_add_favourite'
         print 'data received - ', request.form, '\n'
         new_fav_id=self.models['Search'].add_favourite(request.form)
         print 'New fav ID - ', new_fav_id
-        return new_fav_id
+        return redirect('/search/get_favs_table_partial')
+
+    def favs_partial_html(self):
+        all_favs = self.models['Search'].get_favourites_by_user_id(session)
+        print 'Searches_favs_partial_html - ', all_favs, '\n'
+        return self.load_view('partials/favs_table_partial.html', all_favs=all_favs)
