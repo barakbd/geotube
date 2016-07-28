@@ -15,7 +15,7 @@ class Searches(Controller):
     def index(self):
         # if 'id' in session:
         #     return redirect('/')
-        session['id'] = 2
+        session['user_id'] = 2
         return self.load_view('search.html')
 
     def add_favourite(self):
@@ -23,9 +23,11 @@ class Searches(Controller):
         print 'data received - ', request.form, '\n'
         new_fav_id=self.models['Search'].add_favourite(request.form)
         print 'New fav ID - ', new_fav_id
+        # newfile = jsonify({'new_fav_id': new_fav_id})
+        # return newfile
         return redirect('/search/get_favs_table_partial')
 
     def favs_partial_html(self):
-        all_favs = self.models['Search'].get_favourites_by_user_id(session)
-        print 'Searches_favs_partial_html - ', all_favs, '\n'
-        return self.load_view('partials/favs_table_partial.html', all_favs=all_favs)
+        user_favs = self.models['Search'].get_favourites_by_user_id(session)
+        print 'Searches_favs_partial_html - ', user_favs, '\n'
+        return self.load_view('partials/favs_table_partial.html', user_favs=user_favs)

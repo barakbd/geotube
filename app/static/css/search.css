@@ -46,40 +46,53 @@ a {
     display: inline-block;
 }
 #loginAndFavourites {
-    /*display:inline-block;*/
     float: right;
     width: 35%;
-    height: 300px;
+    height: 500px;
     padding: 20px;
     border: 2px solid red;
     margin: 20px;
     vertical-align: top;
     color: white;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
 }
-#favTable table {
+#favTable-wrapper {
+    position: relative;
+}
+#favTable-scroll {
+    height: 300px;
+    overflow: auto;
+    margin-top: 20px;
+}
+#favTable-wrapper table {
     border: 1px solid green;
-    margin: 20px;
-    padding: 5px 10px;
-    width: 95%;
+    width: 100%;
+    margin-top: 30px;
 }
-#favTable th, #favTable td {
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;;
-    white-space: nowrap;
-    max-width: 0px;
+#favTable-wrapper table thead th {
+    padding-right: 30px;
+    border: 1px solid green;
+    text-align: left;
+}
+#favTable-wrapper table thead {
+    position: absolute;
+    top: 0px;
+    z-index: 2;
     border: 1px solid red;
-    margin: 10px;
+    background-color: gray;
+}
+#favTable-wrapper td {
+    overflow: hidden;
+    max-width: 10px;
+    word-wrap: break-word;
+    padding-top: 5px;
+    border-bottom: 1px solid lightgray;
 }
 .search_name {
     width: 30%;
 }
 .search_description {
-    width: 60%;
-}
-table {
-    border: none;
+    padding-left: 60px;
 }
 #resultsDiv {
     border: 2px solid blue;

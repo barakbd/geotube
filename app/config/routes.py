@@ -30,6 +30,7 @@ routes['POST']['/testroute'] = 'Registrations#testroute'
 routes['GET']['/search'] = 'Searches#index'
 routes['POST']['/search/add_favourite'] = 'Searches#add_favourite'
 routes['GET']['/search/get_favs_table_partial'] = 'Searches#favs_partial_html'
+routes['GET']['/search/show_fav/<user_id>/<fav_id>'] = 'Searches#show_fav'
 """
     You can add routes and specify their handlers as follows:
 

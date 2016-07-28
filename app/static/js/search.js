@@ -212,6 +212,7 @@ function searchYouTube() {
 /**  This function loads parameters from a URL into the input object
  */
 function loadParamsFromURL() {
+
     //retrieve URL from browser window
     var startURL = decodeURIComponent(window.location);
 
@@ -1041,25 +1042,27 @@ function showConnectivityError() {
 
 function new_fav_capture() {
     $('#add_favourite').submit(function() {
-        console.log('hi')
+        console.log('new location' + window.location.href);
         var new_fav_data = {
             'fav_name': document.getElementById('fav_name').value,
             'fav_description': document.getElementById('fav_description').value,
-            'current_url_search': window.location.search
+            'current_url_search': window.location.href
         }
-        console.log(new_fav_data)
+        console.log('new_fav_capture - '+ new_fav_data)
         $.post('/search/add_favourite', new_fav_data, function(response) {
-            get_favs_table_partial();
         });
         document.getElementById('fav_name').value='';
         document.getElementById('fav_description').value='';
-
+        get_favs_table_partial();
         return false;
     });
 }
 
 function get_favs_table_partial(){
-    $.get('/search/get_favs_table_partial'), function(res){
-        $('#favTable').html(res);
-    }
+    // console.log('get_favs_table_partial')
+    $.get('/search/get_favs_table_partial', function(partial){
+        console.log('get_favs_table_partial+partial- '+ partial);
+        $('#favTable-scroll').html(partial);
+    });
+    // return false
 }
