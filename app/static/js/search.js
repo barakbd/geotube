@@ -775,32 +775,36 @@ function displayCustomRangeSection() {
     var optionSelected = $('#timeWindow').find('option:selected').attr('value');
 
     if (optionSelected == 'custom_range') {
-        $('#customRangeSection_1').show();
-        $('#customRangeSection_2').show();
-        $('#customRangeSection_3').show();
-        $('#customRangeSection_4').show();
-        $('#customRangeSection_5').show();
-        $('#customRangeSection_6').show();
-        $('#customRangeSection_7').show();
-        $('#customRangeSection_8').show();
-        $('#customRangeSection_9').show();
-        $('#customRangeSection_10').show();
-        $('#customRangeSection_11').show();
-        $('#customRangeSection_12').show();
-    } else {
-        $('#customRangeSection_1').hide();
-        $('#customRangeSection_2').hide();
-        $('#customRangeSection_3').hide();
-        $('#customRangeSection_4').hide();
-        $('#customRangeSection_5').hide();
-        $('#customRangeSection_6').hide();
-        $('#customRangeSection_7').hide();
-        $('#customRangeSection_8').hide();
-        $('#customRangeSection_9').hide();
-        $('#customRangeSection_10').hide();
-        $('#customRangeSection_11').hide();
-        $('#customRangeSection_12').hide();
-    }
+        $('#customRange').show();
+    }else{
+        $('#customRange').hide();
+        }
+    //     $('#customRangeSection_1').show();
+    //     $('#customRangeSection_2').show();
+    //     $('#customRangeSection_3').show();
+    //     $('#customRangeSection_4').show();
+    //     $('#customRangeSection_5').show();
+    //     $('#customRangeSection_6').show();
+    //     $('#customRangeSection_7').show();
+    //     $('#customRangeSection_8').show();
+    //     $('#customRangeSection_9').show();
+    //     $('#customRangeSection_10').show();
+    //     $('#customRangeSection_11').show();
+    //     $('#customRangeSection_12').show();
+    // } else {
+    //     $('#customRangeSection_1').hide();
+    //     $('#customRangeSection_2').hide();
+    //     $('#customRangeSection_3').hide();
+    //     $('#customRangeSection_4').hide();
+    //     $('#customRangeSection_5').hide();
+    //     $('#customRangeSection_6').hide();
+    //     $('#customRangeSection_7').hide();
+    //     $('#customRangeSection_8').hide();
+    //     $('#customRangeSection_9').hide();
+    //     $('#customRangeSection_10').hide();
+    //     $('#customRangeSection_11').hide();
+    //     $('#customRangeSection_12').hide();
+    // }
 }
 
 /**  This function uses Google Maps Geo Encoder, to convert search location to  Latitude and Longitude

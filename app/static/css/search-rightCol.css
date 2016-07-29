@@ -1,0 +1,61 @@
+/*************** Right Column *************************/
+#rightCol{
+    display: inline-block;
+    width: 30%;
+    /*background-color: red;*/
+    vertical-align: top;
+}
+
+#loginAndFavourites {
+    /*float: right;*/
+    width: 100%;
+    height: 500px;
+    padding: 20px;
+    border: 2px solid red;
+    /*margin: 20px;*/
+    /*vertical-align: top;*/
+    color: white;
+    /*box-sizing: border-box;*/
+}
+#favTable-wrapper {
+    position: relative;
+}
+#favTable-scroll {
+    height: 300px;
+    overflow: auto;
+    margin-top: 20px;
+}
+#favTable-wrapper table {
+    border: 1px solid green;
+    width: 100%;
+    margin-top: 30px;
+}
+#favTable-wrapper table thead th {
+    padding-right: 30px;
+    border: 1px solid green;
+    text-align: left;
+}
+#favTable-wrapper table thead {
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+    border: 1px solid red;
+    background-color: gray;
+}
+#favTable-wrapper td {
+    overflow: hidden;
+    max-width: 10px;
+    word-wrap: break-word;
+    padding-top: 5px;
+    border-bottom: 1px solid lightgray;
+}
+#favTable-wrapper tr td:last-child{
+    margin-right: 10px;
+    margin-left: -50px;
+}
+.search_name {
+    width: 30%;
+}
+.search_description {
+    padding-left: 60px;
+}
