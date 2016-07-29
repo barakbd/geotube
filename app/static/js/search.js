@@ -63,6 +63,12 @@ $(document).ready(function() {
     displayCustomRangeSection();
     new_fav_capture();
     get_favs_table_partial();
+    // $("#startDate").datepicker({
+    //     altFormat: "mm-dd-yy"
+    // });
+    // $("#endDate").datepicker({
+    //     altFormat: "mm-dd-yy"
+    // });
     $.getScript('https://apis.google.com/js/client.js?onload=handleClientLoad');
 });
 
@@ -80,7 +86,10 @@ function handleMapsLoad() {
     loadParamsFromURL();
     var input = document.getElementById('searchLocation');
     var autocomplete = new google.maps.places.Autocomplete(input);
+
+
 }
+
 
 /**
  *  This function clears results from the UI, routes location searches to getLocationSearchResults(),
@@ -776,9 +785,9 @@ function displayCustomRangeSection() {
 
     if (optionSelected == 'custom_range') {
         $('#customRange').show();
-    }else{
+    } else {
         $('#customRange').hide();
-        }
+    }
     //     $('#customRangeSection_1').show();
     //     $('#customRangeSection_2').show();
     //     $('#customRangeSection_3').show();
@@ -1052,20 +1061,19 @@ function new_fav_capture() {
             'fav_description': document.getElementById('fav_description').value,
             'current_url_search': window.location.href
         }
-        console.log('new_fav_capture - '+ new_fav_data)
-        $.post('/search/add_favourite', new_fav_data, function(response) {
-        });
-        document.getElementById('fav_name').value='';
-        document.getElementById('fav_description').value='';
+        console.log('new_fav_capture - ' + new_fav_data)
+        $.post('/search/add_favourite', new_fav_data, function(response) {});
+        document.getElementById('fav_name').value = '';
+        document.getElementById('fav_description').value = '';
         get_favs_table_partial();
         return false;
     });
 }
 
-function get_favs_table_partial(){
+function get_favs_table_partial() {
     // console.log('get_favs_table_partial')
-    $.get('/search/get_favs_table_partial', function(partial){
-        console.log('get_favs_table_partial+partial- '+ partial);
+    $.get('/search/get_favs_table_partial', function(partial) {
+        console.log('get_favs_table_partial+partial- ' + partial);
         $('#favTable-scroll').html(partial);
     });
     // return false
